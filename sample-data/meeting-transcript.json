@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "source": "meeting.wav",
+    "duration_seconds": 154,
+    "sample_rate": 16000,
+    "model": "whisper-base",
+    "language": "en"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.2,
+      "speaker": "Sarah",
+      "text": "Good morning everyone. Let's get started with the Q2 planning review. We have a lot to cover today."
+    },
+    {
+      "start": 8.5,
+      "end": 18.1,
+      "speaker": "Mike",
+      "text": "Thanks Sarah. I wanted to start with the infrastructure costs. We're currently spending about twelve thousand a month on cloud transcript processing."
+    },
+    {
+      "start": 18.4,
+      "end": 28.0,
+      "speaker": "Sarah",
+      "text": "That's higher than expected. What's driving the cost? Is it the per-minute API charges from Deepgram?"
+    },
+    {
+      "start": 28.3,
+      "end": 40.5,
+      "speaker": "Mike",
+      "text": "Exactly. We process about eight hundred hours of audio per month and at one point four cents per minute that adds up fast. Plus there's the bandwidth for uploading everything to the cloud."
+    },
+    {
+      "start": 41.0,
+      "end": 52.8,
+      "speaker": "Lisa",
+      "text": "I've been looking into local processing options. There are some open source tools that can run transcription entirely on our own hardware. The quality is competitive with the cloud APIs now."
+    },
+    {
+      "start": 53.2,
+      "end": 63.0,
+      "speaker": "Sarah",
+      "text": "What would the transition look like? We can't afford any downtime and the quality has to be at least as good as what we have now."
+    },
+    {
+      "start": 63.5,
+      "end": 78.0,
+      "speaker": "Lisa",
+      "text": "We could run them in parallel for a month. Process everything through both systems and compare the output. The local option has the added benefit of keeping all our data on premises which legal has been asking about."
+    },
+    {
+      "start": 78.5,
+      "end": 90.0,
+      "speaker": "Mike",
+      "text": "If we eliminate the cloud API cost that's a hundred and forty four thousand per year. Even accounting for the hardware investment we'd break even in about two months."
+    },
+    {
+      "start": 90.5,
+      "end": 102.0,
+      "speaker": "Sarah",
+      "text": "That's compelling. Let's make this a priority for Q2. Lisa can you put together a concrete implementation plan by next Friday? Include the hardware requirements and the parallel testing timeline."
+    },
+    {
+      "start": 102.5,
+      "end": 110.0,
+      "speaker": "Lisa",
+      "text": "Absolutely. I'll have the full plan with benchmarks and cost projections ready by Friday."
+    },
+    {
+      "start": 110.5,
+      "end": 125.0,
+      "speaker": "Sarah",
+      "text": "Great. Moving on to the next item. Mike how are we doing on the semantic search project? Last month we were evaluating vector database options."
+    },
+    {
+      "start": 125.5,
+      "end": 140.0,
+      "speaker": "Mike",
+      "text": "We evaluated Pinecone and Weaviate. Both work well but the costs scale linearly with the number of vectors. At our projected volume we're looking at two to three hundred per month just for the search infrastructure."
+    },
+    {
+      "start": 140.5,
+      "end": 154.0,
+      "speaker": "Sarah",
+      "text": "Same pattern as the transcription. Let's look at self-hosted options here too. If we can handle both transcription and search locally that's a significant reduction in our monthly cloud spend. Good discussion everyone. Let's reconvene next week."
+    }
+  ]
+}
