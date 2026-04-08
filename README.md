@@ -113,6 +113,20 @@ pip3 install openai-whisper
 
 Or use any Whisper-compatible model — Bonfyre's transcription binary wraps whatever is available on your system.
 
+### 4. OpenAI-compatible API (drop-in replacement)
+
+```bash
+# Start the proxy (53 KB binary)
+bonfyre-proxy serve --port 8787
+
+# Existing OpenAI code works unchanged:
+export OPENAI_API_BASE=http://localhost:8787
+curl -X POST http://localhost:8787/v1/audio/transcriptions \
+  -F file=@audio.wav -F model=whisper-1
+```
+
+Any codebase using the OpenAI Whisper API can switch to Bonfyre with one environment variable change.
+
 ## Sample data included
 
 | File | Description |
@@ -169,3 +183,12 @@ bonfyre-example-transcribe/
 ## License
 
 MIT — same as [Bonfyre](https://github.com/Nickgonzales76017/bonfyre).
+
+## HCP v3.2
+
+This example uses Bonfyre's HCP (Hallucination-Corrected Pipeline) v3.2:
+- **0.997 quality** on tiny q5_0 (29 MB model), **0.999** on base q4_0 (44 MB)
+- 9-layer hallucination detection + morphological logit bias
+- Unified FFT pass (86% less audio analysis overhead)
+- 6 quantization options: q4_0 (24 MB) to fp16 (141 MB)
+- [hcp-whisper source (MIT)](https://github.com/Nickgonzales76017/hcp-whisper)
